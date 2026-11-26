@@ -1,0 +1,28 @@
+;Name: janna mohamed sayed ahmed elsheemy
+;ID: 2025003523
+;Section: 1
+;Q3: count even and odd numbers
+
+LXI H, 2500H
+MOV B, M
+INX H
+
+MVI C, 00H
+MVI D, 00H
+LOOP: MOV A, M
+RAR
+JC ODD
+
+INR C
+JMP NEXT_ELEM
+ODD: INR D
+NEXT_ELEM: INX H
+DCR B
+JNZ LOOP
+
+LXI H, 2600H
+MOV M, C
+INX H
+MOV M, D
+
+HLT
